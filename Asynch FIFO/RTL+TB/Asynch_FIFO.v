@@ -1,7 +1,6 @@
 module Asynch_FIFO #(
     parameter depth = 16,
-    parameter width = 32,
-    parameter addr_size = $clog2(depth) + 1  // MSB extra bit for full/empty distinction
+    parameter width = 32
 ) (
     input [(width - 1):0] data_in,
     input rst_n,
@@ -10,6 +9,9 @@ module Asynch_FIFO #(
     output logic empty, 
     output logic full
 );
+
+
+localparam addr_size = $clog2(depth) + 1  // MSB extra bit for full/empty distinction
 
 // FIFO memory array
 logic [0:(depth-1)] [(width - 1):0] FIFO_mem_rd_wr;
