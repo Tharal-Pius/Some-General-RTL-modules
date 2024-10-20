@@ -13,11 +13,11 @@ module FIFO #(
   localparam addr_width = $clog2(FIFO_depth);
   
   reg [(data_width-1):0] mem [0:(FIFO_depth-1)];
-  reg [(addr_width-1):0] rd_ptr = 4'b0;
-  reg [(addr_width-1):0] wr_ptr = 4'b0;
+  reg [(addr_width):0] rd_ptr = 4'b0;
+  reg [(addr_width):0] wr_ptr = 4'b0;
   integer i;
 
-  assign full = ((wr_ptr + 1'b1)== rd_ptr);
+  assign full = ((wr_ptr[(addr_width-1):0]== rd_ptr[(addr_width-1):0]) & (wr_ptr[addr_width] != rd_ptr[addr_width]));
   assign empty = (wr_ptr == rd_ptr);
 
 //write_data_in
@@ -53,3 +53,4 @@ module FIFO #(
     end
   end
 endmodule
+
