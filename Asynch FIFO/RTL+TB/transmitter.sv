@@ -1,6 +1,6 @@
 `ifndef TRANSMITTER
 `define TRANSMITTER
-
+`include "transmitter.svh"
 module transmitter #(
     parameter SIZE = 4
 ) (
