@@ -1,3 +1,6 @@
+`ifndef ASYNC_FIFO
+`define ASYNC_FIFO
+`include "transmitter.sv"
 module Async_FIFO #(
     parameter DATA_WIDTH = 32,
     parameter ADDR_WIDTH = 4
@@ -148,3 +151,5 @@ module gray_to_bin #(
     endgenerate
     
 endmodule
+
+`endif //ASYNC_FIFO

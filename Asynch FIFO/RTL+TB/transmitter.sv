@@ -1,3 +1,6 @@
+`ifndef TRANSMITTER
+`define TRANSMITTER
+
 module transmitter #(
     parameter SIZE = 4
 ) (
@@ -83,3 +86,5 @@ module gray_to_bin #(
     endgenerate
     
 endmodule
+
+`endif TRANSMITTER
