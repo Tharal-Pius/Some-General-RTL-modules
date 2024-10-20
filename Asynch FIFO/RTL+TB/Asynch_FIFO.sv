@@ -1,6 +1,6 @@
 `ifndef ASYNC_FIFO
 `define ASYNC_FIFO
-`include "transmitter.svh"
+`include "transmitter_includes.svh"
 module Async_FIFO #(
     parameter DATA_WIDTH = 32,
     parameter ADDR_WIDTH = 4
